@@ -1,0 +1,1230 @@
+{
+	"info": {
+		"_postman_id": "b59c5d98-66ec-454c-a4a9-4fe8531e754e",
+		"name": "CCTV_DEV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45311135"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9944080566\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/users/register",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"users",
+								"register"
+							]
+						},
+						"description": "This is to add user, only with mobile"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9944080566\",\r\n    \"otp\":\"433721\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/users/login",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendOtp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9944080566\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/users/sendOtp",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"users",
+								"sendOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDA4MTY3MywiZXhwIjoxNzYwMDg4ODczfQ.JlATa5llY5PnQb9gAxbTKimeVNA2vG5OyqIFYxAcVPI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/users/getAllUsers",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"users",
+								"getAllUsers"
+							]
+						},
+						"description": "Only Admin can access.  \nRequires Admin Bearer Token for Auth"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "customer register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDYxMzAwMiwiZXhwIjoxNzYwNjIwMjAyfQ.0qYzN3hhoBspNTXz7ckWffAFFb6rxpPOw5OS4VzoQuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "SwarnaLatha",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9360134501",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "swarnalatha@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Ammapet, Salem",
+									"type": "text"
+								},
+								{
+									"key": "district",
+									"value": "Salem",
+									"type": "text"
+								},
+								{
+									"key": "pincode",
+									"value": "636001",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/D:/Sarabar Software/sample images for testing/images (2).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/customers/register",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"customers",
+								"register"
+							]
+						},
+						"description": "Only Admin can access.  \nRequires Admin Bearer Token for Auth"
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomer By MobileNo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9360134501\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/customers/getCustomerByMobile",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"customers",
+								"getCustomerByMobile"
+							]
+						},
+						"description": "Admin and Customer have access by their Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "edit customer details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Swarna Latha",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/customers/editCustomer/c6d83bae-1343-4825-a165-fc6a2b95bb27",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"customers",
+								"editCustomer",
+								"c6d83bae-1343-4825-a165-fc6a2b95bb27"
+							]
+						},
+						"description": "Admin and Customer has access with Bearer token"
+					},
+					"response": []
+				},
+				{
+					"name": "get all customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/customers/getAllCustomers",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"customers",
+								"getAllCustomers"
+							]
+						},
+						"description": "Admin have access with Bearer token"
+					},
+					"response": []
+				},
+				{
+					"name": "delete customer by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/testapi/customers/deleteCustomerById/fgs6-6262940bsu",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"testapi",
+								"customers",
+								"deleteCustomerById",
+								"fgs6-6262940bsu"
+							]
+						},
+						"description": "admin have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "get customer by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/customers/getCustomerById/c6d83bae-1343-4825-a165-fc6a2b95bb27",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"customers",
+								"getCustomerById",
+								"c6d83bae-1343-4825-a165-fc6a2b95bb27"
+							]
+						},
+						"description": "Admin and Customer have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "get customer count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/customers/getCustomerCount",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"customers",
+								"getCustomerCount"
+							]
+						},
+						"description": "Admin have access with Bearer Token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "agent register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDYxMzAwMiwiZXhwIjoxNzYwNjIwMjAyfQ.0qYzN3hhoBspNTXz7ckWffAFFb6rxpPOw5OS4VzoQuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Malathi",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "9486464789",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "malathi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Salem",
+									"type": "text"
+								},
+								{
+									"key": "district",
+									"value": "Salem",
+									"type": "text"
+								},
+								{
+									"key": "pincode",
+									"value": "636001",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/D:/Sarabar Software/sample images for testing/images (4).jpg"
+								},
+								{
+									"key": "salary",
+									"value": "15000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/register",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"register"
+							]
+						},
+						"description": "Only Admin can access.  \nRequires Admin Bearer Token for Auth"
+					},
+					"response": []
+				},
+				{
+					"name": "get agent count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/getAgentCount",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"getAgentCount"
+							]
+						},
+						"description": "Admin have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "get agent by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/getAgentById/ae072170-0d6e-48d5-9852-d0797c89f8a0",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"getAgentById",
+								"ae072170-0d6e-48d5-9852-d0797c89f8a0"
+							]
+						},
+						"description": "Admin ad Agent have access with bearer token"
+					},
+					"response": []
+				},
+				{
+					"name": "delete agent by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/deleteAgentById/ae072170-0d6e-48d",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"deleteAgentById",
+								"ae072170-0d6e-48d"
+							]
+						},
+						"description": "Admin have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "get all agents",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/getAllAgents",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"getAllAgents"
+							]
+						},
+						"description": "Admin have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "get Agent By MobileNo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":\"9486464789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/getAgentByMobile",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"getAgentByMobile"
+							]
+						},
+						"description": "Admin have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "edit agent by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/D:/Sarabar Software/sample images for testing/images (3).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/editAgent/ae072170-0d6e-48d5-9852-d0797c89f8a0",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"editAgent",
+								"ae072170-0d6e-48d5-9852-d0797c89f8a0"
+							]
+						},
+						"description": "Admin and Agent have access with Bearer Token"
+					},
+					"response": []
+				},
+				{
+					"name": "update salary by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMxMmQ0MjQ0LWEwYTUtNDAwOS05M2M2LWQzMjkyODU2Nzk2MiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MDM1MTY1MSwiZXhwIjoxNzYwMzU4ODUxfQ.FBGYqlpTLDPFeVqduR33gz9j2f-ZL-mnwUCWWqjnh_g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"salary\":20000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agents/updateSalary/ae072170-0d6e-48d5-9852-d0797c89f8a0",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agents",
+								"updateSalary",
+								"ae072170-0d6e-48d5-9852-d0797c89f8a0"
+							]
+						},
+						"description": "Admin and Agent have access with Bearer Token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ServiceRequest",
+			"item": [
+				{
+					"name": "create request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkYTAyN2UzLTZjZjItNDk2ZC1iMWY1LTdhZDA5NGY0ZjhhZSIsInJvbGUiOiJhZ2VudCIsImlhdCI6MTc2MTE5OTkzMSwiZXhwIjoxNzYxMjQzMTMxfQ.iYWtpUE7DyRurj6S-CeV4H9M0H760jwj58FdCd_78WI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "serviceType",
+									"value": "installation",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Need to install 2 camers in my home",
+									"type": "text"
+								},
+								{
+									"key": "alternativeMobile",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "123, ABC, Salem",
+									"type": "text"
+								},
+								{
+									"key": "scheduledDateAndTime",
+									"value": "2025-10-26T10:00:00+05:30",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [
+										"/D:/Sarabar Software/sample images for testing/626138c145ae847dfe043a72be89a03b.jpg",
+										"/D:/Sarabar Software/sample images for testing/dbea61cb05aa03f77e15ddd5c38702c6.jpg",
+										"/D:/Sarabar Software/sample images for testing/images (1).jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/serviceRequest/createRequest/?customerId=1ad91823-ab9f-4594-ae30-6045285a8e62",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"serviceRequest",
+								"createRequest",
+								""
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "1ad91823-ab9f-4594-ae30-6045285a8e62"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get request by custome id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkYTAyN2UzLTZjZjItNDk2ZC1iMWY1LTdhZDA5NGY0ZjhhZSIsInJvbGUiOiJhZ2VudCIsImlhdCI6MTc2MTE5OTkzMSwiZXhwIjoxNzYxMjQzMTMxfQ.iYWtpUE7DyRurj6S-CeV4H9M0H760jwj58FdCd_78WI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/serviceRequest//getByCustomerId/1ad91823-ab9f-4594-ae30-6045285a8e62",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"serviceRequest",
+								"",
+								"getByCustomerId",
+								"1ad91823-ab9f-4594-ae30-6045285a8e62"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all requests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MTIwMDQwMywiZXhwIjoxNzYxMjQzNjAzfQ.jCiCwJ-lSmjY9n7qUilvHjmj3CRzXPW4GoQx-TS1Zuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/serviceRequest//getAllRequests",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"serviceRequest",
+								"",
+								"getAllRequests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update request status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MTIwMDQwMywiZXhwIjoxNzYxMjQzNjAzfQ.jCiCwJ-lSmjY9n7qUilvHjmj3CRzXPW4GoQx-TS1Zuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/serviceRequest/updateStatus/7a907853-519f-4e99-9eca-9b5899d2ba38",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"serviceRequest",
+								"updateStatus",
+								"7a907853-519f-4e99-9eca-9b5899d2ba38"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AgentAssignment",
+			"item": [
+				{
+					"name": "assign agent to request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MTIwMDQwMywiZXhwIjoxNzYxMjQzNjAzfQ.jCiCwJ-lSmjY9n7qUilvHjmj3CRzXPW4GoQx-TS1Zuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agentAssignment/assignAgent/7a907853-519f-4e99-9eca-9b5899d2ba38/2e6d73c4-3188-4a9f-9d82-ce024de4d0df",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agentAssignment",
+								"assignAgent",
+								"7a907853-519f-4e99-9eca-9b5899d2ba38",
+								"2e6d73c4-3188-4a9f-9d82-ce024de4d0df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all assignments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MTIwMDQwMywiZXhwIjoxNzYxMjQzNjAzfQ.jCiCwJ-lSmjY9n7qUilvHjmj3CRzXPW4GoQx-TS1Zuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agentAssignment/getAllAssignments",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agentAssignment",
+								"getAllAssignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by agent id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MTIwMDQwMywiZXhwIjoxNzYxMjQzNjAzfQ.jCiCwJ-lSmjY9n7qUilvHjmj3CRzXPW4GoQx-TS1Zuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agentAssignment/getByAgentId/2e6d73c4-3188-4a9f-9d82-ce024de4d0df",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agentAssignment",
+								"getByAgentId",
+								"2e6d73c4-3188-4a9f-9d82-ce024de4d0df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update assignment status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYzlkMmY3LTMzYzUtNDZhOS1iOWFkLWQ1MWI3NjdlMWFkYSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MTIwMDQwMywiZXhwIjoxNzYxMjQzNjAzfQ.jCiCwJ-lSmjY9n7qUilvHjmj3CRzXPW4GoQx-TS1Zuk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://909k14i6z7.execute-api.us-east-1.amazonaws.com/test/api/agentAssignment/updateStatus/0080df48-7358-4aaf-b3a0-508f1960f5ac",
+							"protocol": "https",
+							"host": [
+								"909k14i6z7",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"test",
+								"api",
+								"agentAssignment",
+								"updateStatus",
+								"0080df48-7358-4aaf-b3a0-508f1960f5ac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
